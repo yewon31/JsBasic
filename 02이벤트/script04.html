@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h3>this키워드란?</h3>
+
+    <button type="button" onclick="myEvent(this)">이벤트에서this1</button>
+    <button type="button" id="btn" >이벤트에서this2</button>
+
+    <script>
+        //JS에 this는 자바의 this랑은 조금 달라요
+        
+        //일반함수에서 this
+        var x = 1;
+        function func() {
+            var x = 2;
+            console.log(x); //지역변수
+            console.log(this.x); //전역변수
+        }
+        func();
+
+        function myEvent(a) {
+            console.log(a); //이벤트 함수 안에서 this는 자기자신이 됩니다.
+            
+        }
+
+        var btn = document.getElementById("btn");
+        btn.onclick = function() {
+            console.log(this); //이벤트 함수 안에서 this 자기자신.
+        }
+
+    </script>
+</body>
+</html>
