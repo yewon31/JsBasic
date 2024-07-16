@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h3>태그 사이에 값을 넣는 거는 innerHTML = 대입할 값</h3>
+
+
+    <h3 class="title">단어를 선택하세요</h3>
+    <select class="sel">
+        <option value="a">선택</option>
+        <option value="b">안녕하세요</option>
+        <option value="c">hello</option>
+        <option value="d">중국어</option>
+    </select>
+
+    <script>
+        var title = document.querySelector(".title");
+        var sel = document.querySelector(".sel");
+
+        sel.addEventListener('change', function () {
+
+            if (sel.value === 'a') {
+                title.innerHTML = '단어를 선택하세요';
+            } else if (sel.value === 'b') {
+                title.innerHTML = '한국어 입니다';
+            } else if (sel.value === 'c') {
+                title.innerHTML = '영어 입니다';
+            } else if (sel.value === 'd') {
+                title.innerHTML = '중국어 입니다';
+
+            }
+
+        })
+
+    </script>
+</body>
+
+</html>
