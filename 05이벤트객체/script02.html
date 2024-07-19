@@ -17,23 +17,28 @@
 
     <p class="result"></p>
 
+
     <script>
         //부모태그에 이벤트를 걸면, 자식한테 이벤트가 위임 됩니다.
         var box = document.querySelector(".box"); //li의 부모님 box
         var result = document.querySelector(".result");
 
         box.onclick = function(e) {
-            //console.log('이벤트 동작됨!!!');
+            // console.log('이벤트 동작됨!!!');
             // console.log(event); //이벤트의 대한 정보
-            //console.log(event.target); //이벤트가 동작한 태그
-            //console.log(event.currentTarget); //실제 이벤트가 걸려있는 태그
+            // console.log(event.target); //이벤트가 동작한 태그
+            // console.log(event.currentTarget); //실제 이벤트가 걸려있는 태그
 
-            if(event.target.tagName == "UL") return; //이벤트 동작이 UL인 경우는 종료
+            if(event.target.tagName != "LI") return; //이벤트 동작이 UL인 경우는 종료
 
             result.innerHTML = event.target.innerHTML;
         }
 
+
     </script>
+
+
+
 
 </body>
 </html>
