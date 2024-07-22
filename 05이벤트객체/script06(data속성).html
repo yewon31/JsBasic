@@ -23,6 +23,7 @@
             event.preventDefault(); //고유 이벤트 중단
             if(event.target.tagName != "A") return; //A태그가 아니면 중단.
 
+            
             console.log(event.target.dataset.info ) //data-info에 저장되는 값
             console.log(event.target.dataset.address ) //data-address 저장되는 값
             console.log(event.target.dataset.user)
@@ -32,6 +33,10 @@
 
         }
     </script>
+
+
+
+
 
 </body>
 </html>

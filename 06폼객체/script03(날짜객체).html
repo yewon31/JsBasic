@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var date = new Date(); //오늘날짜 (날짜타입)
+        console.log(date);
+
+        var date2 = new Date("2024-07-22 09:40:32"); //
+        console.log(date2);
+
+        var date3 = new Date(2024, 7, 22, 9, 40, 35); 
+        console.log(date3);
+
+        var millis = date.getTime(); //1970.1.1일 기준 ~ 밀리초로 나타냄
+        console.log(millis)
+
+        var date4 = new Date(millis);
+        console.log(date4);
+
+        console.log("--------------------------------------------------------------------");
+        //날짜의 포맷형식 변환 함수
+        console.log(  date.toUTCString() ); //시계협정시 문자열로
+        console.log(  date.toLocaleTimeString() ); //국가별 지역시간
+        console.log(  date.toISOString() ); //국제 표준화 기구(ISO)에서 시간을 나타내는 표준시
+
+        console.log("--------------------------------------------------------------------");
+
+        console.log( date.getFullYear() ); //년도
+        console.log( date.getMonth() + 1 ); //월
+        console.log( date.getDate() ); //일
+        console.log( date.getHours() ); //시
+        console.log( date.getMinutes() ); //분
+        console.log( date.getSeconds() ); //초
+
+        console.log("--------------------------------------------------------------------");
+        // 시간계산 밀리초 변환해서 계산
+        var millisecond = 1721610999127;
+
+        var now = new Date().getTime();
+
+        console.log(now - millisecond);
+
+        console.log( ( now - millisecond) / 1000 ); //몇초 지났는지
+        console.log( ( now - millisecond) / 1000 / 60  ); //몇분 지났는지
+        console.log( ( now - millisecond) / 1000 / 60 / 60   ); //몇시간 지났는지
+
+
+
+        
+        
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>
