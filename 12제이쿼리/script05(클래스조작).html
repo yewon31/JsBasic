@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+
+</head>
+
+<body>
+
+    <button type="button" id="btn" class="btn btn-default">클래스조작테스트</button>
+
+
+    <script>
+        //js
+        // var btn = document.getElementById("btn");
+        // btn.classList.add("클래스추가"); //추가
+        // btn.classList.remove("클래스추가"); //삭제
+
+
+        //제이쿼리
+        $("#btn").addClass("myBtn"); //추가
+        $("#btn").removeClass("btn"); //삭제
+        console.log($("#btn").hasClass("btn")); //btn이 포함되어있으면 true, 없으면 false
+    </script>
+
+    <h3>토글</h3>
+    <button type="button" id="tog" class="dark">토글버튼</button>
+
+    <script>
+        $("#tog").click(function () {
+
+            //console.log(this);
+            //console.log(event.target);
+
+            //$(this)
+            $(event.target).toggleClass("dark");
+
+        })
+
+    </script>
+
+    <hr>
+
+    <button id="test" type="button" class="test aaa">실습</button>
+
+    <script>
+        //test버튼에 aaa클래스가 있다면 body배경색을 검은색
+        //test버튼에 aaa가 없다면 body배경색을 흰색
+        //hasClass, addClass, removeClass를 적절하게 사용하면 됩니다.
+
+        $("#test").click(function () {
+
+            if ($(event.target).hasClass("aaa")) {
+                $(document.body).css("backgroundColor", "black");
+            } else {
+                $(document.body).css("backgroundColor", "white");
+            }
+
+            $(event.target).toggleClass("aaa");
+        })
+
+
+    </script>
+
+</body>
+
+</html>
