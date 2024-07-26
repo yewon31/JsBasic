@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // fetch("hello.txt")
+        // .then(function(response) {
+        //     response.text().then(function(data) {
+        //         console.log(data); //hello world
+        //     })
+        // });
+        
+        /*
+        Prmomise는 fetch실행결과를 반환해주는 객체
+        3가지의 상태를 나타냄
+        1. fullfiled - 성공적 수행
+        2. pending - 대기중
+        3. reject - 거절(실패)
+
+        이 객체 안에는 then(콜백)
+        콜백 <- 실행 결과가 얼마나 걸릴지 모르니, call했을 때 결과를 back받을 함수
+        */
+        // var promise = fetch("hello.txt") //Promise객체 반환
+        // promise.then(function(response) {
+        //     console.log(response);
+        // })
+        //console.log(promise);
+        
+        
+        //순서 보장이 되지 않음 -> 
+        // console.log(1);
+        // fetch("hello.txt")
+        // .then(function(response) {
+        //     console.log(response);
+        //     console.log(2);
+        // })
+        // console.log(3);
+
+
+        //3nd
+        fetch("hello.txt") //name은 홍길동, age는 20, address는 서울
+        .then(function(response) {
+            if(response.status != 200) {
+                console.log("요청에 실패했습니다");
+                return;
+            }
+            //console.log(response);
+            //response에서 데이터를 꺼냄
+            //text() 는 문자열의 형태로 데이터를 꺼냄 - 반환은 Promise객체
+            response.text().then(function(data) {
+                console.log(data);
+            })
+        })
+
+        //4nd - json() 제이슨 타입을 받는 경우
+        // fetch("hello.json")
+        // .then(function(response) {
+        //     response.json().then(function(data) {
+        //         console.log(data);
+        //     })
+        // })
+
+        //5nd
+        fetch("hello.json") //{"name" : "홍길동","age" : 20}
+        .then(function(response) {
+            return response.json(); //
+        })
+        .then(function(data) {
+            return data;
+        })
+        .then(function(data) {
+            return data;
+        })
+        .then(function(data) {
+            console.log(data);
+        })
+        .catch(function(e) {
+            console.log(e);
+        }) 
+
+    </script>
+
+</body>
+</html>
