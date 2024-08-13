@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h3>다른 서버에서 요청 </h3>
+
+    <button type="button" id="postBtn">post방식</button>
+
+    <script>
+        var postBtn = document.getElementById("postBtn");
+        postBtn.addEventListener("click", function() {
+            //post
+            fetch("http://localhost:8181/getEntity", {
+                method : "post",
+                headers : {
+                    "Content-Type" : "application/json"
+                },
+                body : JSON.stringify({num : 1, name : "홍길동"})
+            })
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(data) {
+                console.log(data);
+            })
+
+        })
+
+
+    </script>
+
+
+</body>
+</html>
